@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xử lý Tham số</title>
+  <script>
+    // Hàm nhận hai tham số và thực hiện yêu cầu
+    function xuLyThamSo(thamSo1, thamSo2) {
+      if (thamSo1 > thamSo2) {
+        // Nếu tham số thứ nhất lớn hơn tham số thứ hai
+        alert("Giá trị của tham số thứ nhất lớn hơn tham số thứ hai.");
+      } else {
+        // Nếu tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai
+        var tong = thamSo1 + thamSo2;
+        return tong;
+      }
+    }
+
+    // Hàm để gọi và xử lý kết quả
+    function xuLyClick() {
+      var thamSo1 = parseFloat(document.getElementById("thamSo1").value);
+      var thamSo2 = parseFloat(document.getElementById("thamSo2").value);
+
+      if (!isNaN(thamSo1) && !isNaN(thamSo2)) {
+        var ketQua = xuLyThamSo(thamSo1, thamSo2);
+
+        if (typeof ketQua === 'number') {
+          alert("Tổng của hai tham số là: " + ketQua);
+        }
+      } else {
+        alert("Vui lòng nhập số hợp lệ cho cả hai tham số.");
+      }
+    }
+  </script>
+</head>
+<body>
+<h1>Xử lý Tham số</h1>
+
+<!-- Ô input để nhập tham số thứ nhất -->
+<label for="thamSo1">Nhập tham số thứ nhất:</label>
+<input type="text" id="thamSo1">
+
+<!-- Ô input để nhập tham số thứ hai -->
+<label for="thamSo2">Nhập tham số thứ hai:</label>
+<input type="text" id="thamSo2">
+
+<!-- Nút để gọi hàm và xử lý -->
+<button onclick="xuLyClick()">Xử Lý</button>
+</body>
+</html>

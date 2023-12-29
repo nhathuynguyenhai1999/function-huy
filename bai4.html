@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alert Example</title>
+  <script>
+    function myFunction() {
+      var result = "Hello, World!";
+
+      // Hiển thị giá trị của biến result trước lời gọi hàm
+      alert("Trước khi gọi hàm: " + result);
+
+      // Gọi hàm khác ở đây (nếu có)
+
+      // Hiển thị giá trị của biến result sau lời gọi hàm
+      alert("Sau khi gọi hàm: " + result);
+    }
+    function addNumbers() {
+      firstNum = 4;
+      secondNum = 8;
+      result = firstNum + secondNum;
+      return result;
+    }
+
+    result = 0;
+
+    // Hiển thị giá trị của biến result trước khi gọi hàm
+    alert("Trước khi gọi hàm: " + result);
+
+    // Gọi hàm và gán giá trị trả về vào biến result
+    result = addNumbers();
+
+    // Hiển thị giá trị của biến result sau khi gọi hàm
+    alert("Sau khi gọi hàm: " + result);
+
+  </script>
+</head>
+<body>
+
+<button onclick="myFunction()">Click me</button>
+<button onclick="addNumbers()">CLick other</button>
+</body>
+</html>
+
+
