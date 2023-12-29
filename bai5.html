@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tìm số nguyên nhỏ nhất</title>
+  <script>
+    function timSoNhoNhat(a, b, c) {
+      return Math.min(a, b, c);
+    }
+
+    function hienThiKetQua() {
+      var so1 = parseInt(document.getElementById("inputNumber1").value);
+      var so2 = parseInt(document.getElementById("inputNumber2").value);
+      var so3 = parseInt(document.getElementById("inputNumber3").value);
+
+      var resultContainer = document.getElementById("result");
+
+      if (!isNaN(so1) && !isNaN(so2) && !isNaN(so3)) {
+        var soNhoNhat = timSoNhoNhat(so1, so2, so3);
+        resultContainer.innerHTML = "Số nguyên nhỏ nhất là: " + soNhoNhat;
+      } else {
+        resultContainer.innerHTML = "Vui lòng nhập ba số nguyên.";
+      }
+    }
+  </script>
+</head>
+<body>
+<h1>Tìm số nguyên nhỏ nhất</h1>
+<label for="inputNumber1">Nhập số thứ nhất:</label>
+<input type="text" id="inputNumber1" />
+<br>
+<label for="inputNumber2">Nhập số thứ hai:</label>
+<input type="text" id="inputNumber2" />
+<br>
+<label for="inputNumber3">Nhập số thứ ba:</label>
+<input type="text" id="inputNumber3" />
+<br>
+<button onclick="hienThiKetQua()">Tìm số nhỏ nhất</button>
+<div id="result"></div>
+</body>
+</html>

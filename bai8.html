@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đảo ngược mảng số nguyên</title>
+  <script>
+    function daoNguocMang(arr) {
+      return arr.reverse();
+    }
+
+    function hienThiKetQua() {
+      var inputArray = document.getElementById("inputArray").value;
+      var resultContainer = document.getElementById("result");
+
+      // Chuyển đổi chuỗi nhập vào thành mảng số nguyên
+      var array = inputArray.split(',').map(Number);
+
+      if (Array.isArray(array) && array.length > 0) {
+        var ketQua = daoNguocMang(array);
+        resultContainer.innerHTML = "Mảng sau khi đảo ngược: " + ketQua.join(', ');
+      } else {
+        resultContainer.innerHTML = "Vui lòng nhập một mảng số nguyên.";
+      }
+    }
+  </script>
+</head>
+<body>
+<h1>Đảo ngược mảng số nguyên</h1>
+<label for="inputArray">Nhập mảng số nguyên (cách nhau bởi dấu phẩy):</label>
+<input type="text" id="inputArray" />
+<br>
+<button onclick="hienThiKetQua()">Đảo ngược mảng</button>
+<div id="result"></div>
+</body>
+</html>
+

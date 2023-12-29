@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiểm tra số nguyên dương</title>
+  <script>
+    function laSoNguyenDuong(number) {
+      // Kiểm tra xem số có là nguyên dương không
+      return Number.isInteger(number) && number > 0;
+    }
+
+    function kiemTraSo() {
+      var userInput = parseFloat(document.getElementById("inputNumber").value);
+      var resultContainer = document.getElementById("result");
+
+      if (!isNaN(userInput)) {
+        if (laSoNguyenDuong(userInput)) {
+          resultContainer.innerHTML = "Số nhập vào là số nguyên dương.";
+        } else {
+          resultContainer.innerHTML = "Số nhập vào không phải là số nguyên dương.";
+        }
+      } else {
+        resultContainer.innerHTML = "Vui lòng nhập một số.";
+      }
+    }
+  </script>
+</head>
+<body>
+<h1>Kiểm tra số nguyên dương</h1>
+<label for="inputNumber">Nhập một số:</label>
+<input type="text" id="inputNumber" />
+<button onclick="kiemTraSo()">Kiểm tra</button>
+<div id="result"></div>
+</body>
+</html>
+

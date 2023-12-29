@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đổi chỗ hai số nguyên</title>
+  <script>
+    function doiCho(a, b) {
+      var temp = a;
+      a = b;
+      b = temp;
+      return [a, b];
+    }
+
+    function hienThiKetQua() {
+      var so1 = parseInt(document.getElementById("inputNumber1").value);
+      var so2 = parseInt(document.getElementById("inputNumber2").value);
+
+      var resultContainer = document.getElementById("result");
+
+      if (!isNaN(so1) && !isNaN(so2)) {
+        var ketQua = doiCho(so1, so2);
+        resultContainer.innerHTML = "Sau khi đổi chỗ: Số thứ nhất là " + ketQua[0] + ", Số thứ hai là " + ketQua[1];
+      } else {
+        resultContainer.innerHTML = "Vui lòng nhập hai số nguyên.";
+      }
+    }
+  </script>
+</head>
+<body>
+<h1>Đổi chỗ hai số nguyên</h1>
+<label for="inputNumber1">Nhập số thứ nhất:</label>
+<input type="text" id="inputNumber1" />
+<br>
+<label for="inputNumber2">Nhập số thứ hai:</label>
+<input type="text" id="inputNumber2" />
+<br>
+<button onclick="hienThiKetQua()">Đổi chỗ</button>
+<div id="result"></div>
+</body>
+</html>

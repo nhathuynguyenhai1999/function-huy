@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiểm tra và đếm ký tự trong mảng</title>
+  <script>
+    function kiemTraVaDemKyTu(arr, kyTu) {
+      var dem = 0;
+
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] === kyTu) {
+          dem++;
+        }
+      }
+
+      return dem !== 0 ? dem : -1;
+    }
+
+    function hienThiKetQua() {
+      var inputArray = document.getElementById("inputArray").value;
+      var inputChar = document.getElementById("inputChar").value;
+      var resultContainer = document.getElementById("result");
+
+      // Chuyển đổi chuỗi nhập vào thành mảng ký tự
+      var charArray = Array.from(inputArray);
+
+      if (charArray.length > 0 && inputChar.length === 1) {
+        var ketQua = kiemTraVaDemKyTu(charArray, inputChar);
+        if (ketQua !== -1) {
+          resultContainer.innerHTML = "Ký tự '" + inputChar + "' xuất hiện " + ketQua + " lần trong mảng.";
+        } else {
+          resultContainer.innerHTML = "Ký tự '" + inputChar + "' không xuất hiện trong mảng.";
+        }
+      } else {
+        resultContainer.innerHTML = "Vui lòng nhập một mảng ký tự và một ký tự.";
+      }
+    }
+  </script>
+</head>
+<body>
+<h1>Kiểm tra và đếm ký tự trong mảng</h1>
+<label for="inputArray">Nhập mảng ký tự:</label>
+<input type="text" id="inputArray" />
+<br>
+<label for="inputChar">Nhập ký tự cần kiểm tra:</label>
+<input type="text" id="inputChar" maxlength="1" />
+<br>
+<button onclick="hienThiKetQua()">Kiểm tra và đếm</button>
+<div id="result"></div>
+</body>
+</html>
